@@ -10,7 +10,7 @@ LOG_FILE=${LOG_DIR}/data_get_log.txt
 get_data()
 {
    url_file=${AREAS[$1]}.htm
-   output_file=${OUTPUT_AREAS[$1]}_water_temperature.txt
+   output_file=${OUTPUT_AREAS[$1]}_water.txt
    #https://www.seatemperature.org/australia-pacific/australia/newcastle.htm
    cmd="wget -q -O - ${URL}${url_file} | grep -A3 'id="sea-temperature"' | grep deg | tr '&' ' ' | awk '{print $1}' > $OUTPUT_DIR/${output_file}"
    wget -q -O - ${URL}${url_file} | grep -A3 'id="sea-temperature"' | grep deg | tr '&' ' ' | awk '{print $1}' > $OUTPUT_DIR/${output_file}

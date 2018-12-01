@@ -14,4 +14,4 @@ cleanup()
 cleanup
 
 bash ./weather_willy.sh
-bash ./weather_water_temperature.sh
+bash ./weather_water.sh
