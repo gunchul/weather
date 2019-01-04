@@ -12,8 +12,9 @@ get_data()
    url_file=${AREAS[$1]}.htm
    output_file=${OUTPUT_AREAS[$1]}_water.txt
    #https://www.seatemperature.org/australia-pacific/australia/newcastle.htm
-   cmd="wget -q -O - ${URL}${url_file} | grep -A3 'id="sea-temperature"' | grep deg | tr '&' ' ' | awk '{print $1}' > $OUTPUT_DIR/${output_file}"
-   wget -q -O - ${URL}${url_file} | grep -A3 'id="sea-temperature"' | grep deg | tr '&' ' ' | awk '{print $1}' > $OUTPUT_DIR/${output_file}
+   cmd="wget -q -O - ${URL}${url_file} | grep -A2 'id=\"sea-temperature\"' | grep -v 'div' | sed -e 's/[ \t]*//' | tr '&' ' ' | awk -F '/' '{print \$1}'> $OUTPUT_DIR/${output_file}"
+   #echo $cmd
+   wget -q -O - ${URL}${url_file} | grep -A2 'id=\"sea-temperature\"' | grep -v 'div' | sed -e 's/[ \t]*//' | tr '&' ' ' | awk -F '/' '{print $1}'> $OUTPUT_DIR/${output_file}
    [ $? -eq 0 ] || echo "ERROR: "$cmd >> ${LOG_FILE}
 }
 

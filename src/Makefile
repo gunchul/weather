@@ -7,6 +7,7 @@ SRCS+=wind.c
 SRCS+=tide.c
 SRCS+=moon.c
 SRCS+=rain.c
+SRCS+=water.c
 SRCS+=weather.c
 
 OBJS=$(SRCS:.c=.o)

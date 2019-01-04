@@ -1,0 +1,120 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+DASH	rain.c	16;"	d	file:
+DASH	water.c	16;"	d	file:
+LINE_MAX	swell.c	10;"	d	file:
+LINE_MAX	wind.c	11;"	d	file:
+_XOPEN_SOURCE	moon.c	1;"	d	file:
+_XOPEN_SOURCE	rain.c	1;"	d	file:
+_XOPEN_SOURCE	water.c	1;"	d	file:
+__MOON_H__	moon.h	2;"	d
+__PARSER_H__	parser.h	2;"	d
+__RAIN_H__	rain.h	2;"	d
+__SUNRISESUNSET_H__	sunrisesunset.h	2;"	d
+__SWELL_H__	swell.h	2;"	d
+__TIDE_H__	tide.h	2;"	d
+__UTIL_H__	util.h	2;"	d
+__WATER_H__	water.h	2;"	d
+__WIND_H__	wind.h	2;"	d
+description	moon.h	/^	char description[32];$/;"	m	struct:__anon2
+description	rain.h	/^	char description[32];$/;"	m	struct:__anon3
+description	sunrisesunset.h	/^	char description[32];$/;"	m	struct:__anon4
+description	tide.h	/^	char description[32];$/;"	m	struct:__anon6
+description	water.h	/^	char description[32];$/;"	m	struct:__anon7
+direction	swell.h	/^	char direction[16];$/;"	m	struct:__anon5
+direction	wind.h	/^	char direction[32];$/;"	m	struct:__anon8
+g_data	moon.c	/^static moon_t g_data[1024];$/;"	v	file:
+g_data	rain.c	/^static rain_t g_data[1024];$/;"	v	file:
+g_data	sunrisesunset.c	/^static sunrisesunset_t g_data[1024];$/;"	v	file:
+g_data	swell.c	/^static swell_t g_data[1024];$/;"	v	file:
+g_data	tide.c	/^static tide_t g_data[1024];$/;"	v	file:
+g_data	water.c	/^static water_t g_data[1024];$/;"	v	file:
+g_data	wind.c	/^static wind_t g_data[1024];$/;"	v	file:
+g_num_data	moon.c	/^static int g_num_data=0;$/;"	v	file:
+g_num_data	rain.c	/^static int g_num_data=0;$/;"	v	file:
+g_num_data	sunrisesunset.c	/^static int g_num_data=0;$/;"	v	file:
+g_num_data	swell.c	/^static int g_num_data=0;$/;"	v	file:
+g_num_data	tide.c	/^static int g_num_data=0;$/;"	v	file:
+g_num_data	water.c	/^static int g_num_data=0;$/;"	v	file:
+g_num_data	wind.c	/^static int g_num_data=0;$/;"	v	file:
+height	swell.h	/^	double height;$/;"	m	struct:__anon5
+height	tide.h	/^	double height;$/;"	m	struct:__anon6
+main	weather.c	/^int main(int argc, char* argv[])$/;"	f
+moon	weather.c	/^	moon_t *moon;$/;"	m	struct:__anon1	file:
+moon_data_cb	moon.c	/^int moon_data_cb(char* data)$/;"	f
+moon_get_data	moon.c	/^int moon_get_data(char *area, moon_t **data, int *num_data)$/;"	f
+moon_get_dates	moon.c	/^int moon_get_dates(moon_t* data, int num_data, struct tm* ts, int num_ts)$/;"	f
+moon_get_on_date	moon.c	/^int moon_get_on_date(moon_t* data, int num_data, struct tm* ts, moon_t* result)$/;"	f
+moon_t	moon.h	/^}moon_t;$/;"	t	typeref:struct:__anon2
+num_moon	weather.c	/^	int num_moon;$/;"	m	struct:__anon1	file:
+num_rain	weather.c	/^	int num_rain;$/;"	m	struct:__anon1	file:
+num_sunrisesunset	weather.c	/^	int num_sunrisesunset;$/;"	m	struct:__anon1	file:
+num_swell	weather.c	/^	int num_swell;$/;"	m	struct:__anon1	file:
+num_tide	weather.c	/^	int num_tide;$/;"	m	struct:__anon1	file:
+num_wind	weather.c	/^	int num_wind;$/;"	m	struct:__anon1	file:
+parser	parser.c	/^char* parser($/;"	f
+period	swell.h	/^	double period;$/;"	m	struct:__anon5
+period_update	swell.c	/^static void period_update(time_t time, double period)$/;"	f	file:
+print_moon	moon.c	/^void print_moon(moon_t* data, int num_data)$/;"	f
+print_rain	rain.c	/^void print_rain(rain_t* data, int num_data)$/;"	f
+print_sunrisesunset	sunrisesunset.c	/^void print_sunrisesunset(sunrisesunset_t* data, int num_data)$/;"	f
+print_swell	swell.c	/^void print_swell(swell_t* data, int num_data)$/;"	f
+print_tide	tide.c	/^void print_tide(tide_t* data, int num_data)$/;"	f
+print_water	water.c	/^void print_water(water_t* data, int num_data)$/;"	f
+print_wind	wind.c	/^void print_wind(wind_t* data, int num_data)$/;"	f
+rain	weather.c	/^	rain_t *rain;$/;"	m	struct:__anon1	file:
+rain_data_cb	rain.c	/^int rain_data_cb(char* data)$/;"	f
+rain_get_data	rain.c	/^int rain_get_data(char *area, rain_t **data, int *num_data)$/;"	f
+rain_get_dates	rain.c	/^int rain_get_dates(rain_t* data, int num_data, struct tm* ts, int num_ts)$/;"	f
+rain_get_on_date	rain.c	/^int rain_get_on_date(rain_t* data, int num_data, struct tm* ts, rain_t* result)$/;"	f
+rain_t	rain.h	/^}rain_t;$/;"	t	typeref:struct:__anon3
+remove_dash	rain.c	/^static void remove_dash(char *dest, char *src)$/;"	f	file:
+remove_dash	water.c	/^static void remove_dash(char *dest, char *src)$/;"	f	file:
+result_moon	weather.c	/^static void result_moon(weather_data_t* weather, struct tm* ts)$/;"	f	file:
+result_rain	weather.c	/^static void result_rain(weather_data_t* weather, struct tm* ts)$/;"	f	file:
+result_sunrisesunset	weather.c	/^static void result_sunrisesunset(weather_data_t* weather, struct tm* ts)$/;"	f	file:
+result_swell	weather.c	/^static void result_swell(weather_data_t* weather, struct tm* ts)$/;"	f	file:
+result_tide	weather.c	/^static void result_tide(weather_data_t* weather, struct tm* ts)$/;"	f	file:
+result_water	weather.c	/^static void result_water(weather_data_t* weather, struct tm* ts)$/;"	f	file:
+speed	wind.h	/^	double speed;$/;"	m	struct:__anon8
+sunrisesunset	weather.c	/^	sunrisesunset_t* sunrisesunset;$/;"	m	struct:__anon1	file:
+sunrisesunset_data_cb	sunrisesunset.c	/^int sunrisesunset_data_cb(char* data)$/;"	f
+sunrisesunset_get_data	sunrisesunset.c	/^int sunrisesunset_get_data(char *area, sunrisesunset_t **data, int *num_data)$/;"	f
+sunrisesunset_get_dates	sunrisesunset.c	/^int sunrisesunset_get_dates(sunrisesunset_t* data, int num_data, struct tm* ts, int num_ts)$/;"	f
+sunrisesunset_get_on_date	sunrisesunset.c	/^int sunrisesunset_get_on_date(sunrisesunset_t* data, int num_data, struct tm* ts, sunrisesunset_t* result)$/;"	f
+sunrisesunset_t	sunrisesunset.h	/^}sunrisesunset_t;$/;"	t	typeref:struct:__anon4
+swell	weather.c	/^	swell_t* swell;$/;"	m	struct:__anon1	file:
+swell_get_data	swell.c	/^int swell_get_data(char* area, swell_t** data, int* num_data)$/;"	f
+swell_get_on_date	swell.c	/^int swell_get_on_date(swell_t* data, int num_data, struct tm* ts, swell_t* result, int num_result)$/;"	f
+swell_height_data_cb	swell.c	/^int swell_height_data_cb(char* data)$/;"	f
+swell_period_data_cb	swell.c	/^int swell_period_data_cb(char* data)$/;"	f
+swell_t	swell.h	/^}swell_t;$/;"	t	typeref:struct:__anon5
+tide	weather.c	/^	tide_t* tide;$/;"	m	struct:__anon1	file:
+tide_data_cb	tide.c	/^int tide_data_cb(char* data)$/;"	f
+tide_get_data	tide.c	/^int tide_get_data(char* area, tide_t** data, int* num_data)$/;"	f
+tide_get_on_date	tide.c	/^int tide_get_on_date(tide_t* data, int num_data, struct tm* ts, tide_t* result, int num_result)$/;"	f
+tide_t	tide.h	/^}tide_t;$/;"	t	typeref:struct:__anon6
+time	moon.h	/^	time_t time;$/;"	m	struct:__anon2
+time	rain.h	/^	time_t time;$/;"	m	struct:__anon3
+time	sunrisesunset.h	/^	time_t time;$/;"	m	struct:__anon4
+time	swell.h	/^	time_t time;$/;"	m	struct:__anon5
+time	tide.h	/^	time_t time;$/;"	m	struct:__anon6
+time	water.h	/^	time_t time;$/;"	m	struct:__anon7
+time	wind.h	/^	time_t time;$/;"	m	struct:__anon8
+util_get_ts	util.c	/^void util_get_ts(time_t time, struct tm* ts)$/;"	f
+water_data_cb	water.c	/^int water_data_cb(char* data)$/;"	f
+water_get_data	water.c	/^int water_get_data(char *area, water_t **data, int *num_data)$/;"	f
+water_get_dates	water.c	/^int water_get_dates(water_t* data, int num_data, struct tm* ts, int num_ts)$/;"	f
+water_get_on_date	water.c	/^int water_get_on_date(water_t* data, int num_data, struct tm* ts, water_t* result)$/;"	f
+water_t	water.h	/^}water_t;$/;"	t	typeref:struct:__anon7
+weather_data_t	weather.c	/^}weather_data_t;$/;"	t	typeref:struct:__anon1	file:
+weather_get_data	weather.c	/^static int weather_get_data(char* area, weather_data_t* weather)$/;"	f	file:
+wind	weather.c	/^	wind_t* wind;$/;"	m	struct:__anon1	file:
+wind_data_cb	wind.c	/^int wind_data_cb(char* data)$/;"	f
+wind_get_data	wind.c	/^int wind_get_data(char* area, wind_t** data, int* num_data)$/;"	f
+wind_get_on_time	wind.c	/^int wind_get_on_time(wind_t* data, int num_data, time_t time, wind_t* result)$/;"	f
+wind_t	wind.h	/^}wind_t;$/;"	t	typeref:struct:__anon8

@@ -1,3 +1,4 @@
+#include <locale.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -10,6 +11,7 @@
 #include "tide.h"
 #include "moon.h"
 #include "rain.h"
+#include "water.h"
 #include "util.h"
 
 typedef struct{
@@ -25,6 +27,8 @@ typedef struct{
 	int num_moon;
 	rain_t *rain;
 	int num_rain;
+	water_t *water;
+	int num_water;
 }weather_data_t;
 
 static int weather_get_data(char* area, weather_data_t* weather)
@@ -33,37 +37,36 @@ static int weather_get_data(char* area, weather_data_t* weather)
 	{
 		return -1;
 	}
-	//print_sunrisesunset(weather->sunrisesunset, weather->num_sunrisesunset);
+
+	if ( water_get_data(area, &weather->water, &weather->num_water) )
+	{
+		return -1;
+	}
 
 	if ( moon_get_data(area, &weather->moon, &weather->num_moon) )
 	{
 		return -1;
 	}
-	//print_sunrisesunset(weather->sunrisesunset, weather->num_sunrisesunset);
 
 	if ( sunrisesunset_get_data(area, &weather->sunrisesunset, &weather->num_sunrisesunset) )
 	{
 		return -1;
 	}
-	//print_sunrisesunset(weather->sunrisesunset, weather->num_sunrisesunset);
 
 	if ( tide_get_data(area, &weather->tide, &weather->num_tide) )
 	{
 		return -1;
 	}
-	//print_tide(weather->tide, weather->num_tide);
 
 	if ( swell_get_data(area, &weather->swell, &weather->num_swell) )
 	{
 		return -1;
 	}
-	//print_swell(weather->swell, weather->num_swell);
 
 	if ( wind_get_data(area, &weather->wind, &weather->num_wind) )
 	{
 		return -1;
 	}
-	//print_wind(weather->wind, weather->num_wind);
 
 	return 0;
 }
@@ -123,6 +126,18 @@ static void result_rain(weather_data_t* weather, struct tm* ts)
 	printf("\n");
 }
 
+static void result_water(weather_data_t* weather, struct tm* ts)
+{
+	water_t water;
+	
+	if ( water_get_on_date(weather->water, weather->num_water, ts, &water) )
+	{
+		fprintf(stderr, "water_get_on_date() failed");
+		return;
+	}
+	
+	printf("sea-temperature: %s\n", water.description);
+}
 static void result_tide(weather_data_t* weather, struct tm* ts)
 {
 	int i;
@@ -191,6 +206,8 @@ int main(int argc, char* argv[])
 	struct tm ts[7];
 	char buff[128];
 	
+    setlocale(LC_ALL, "");
+
 	if ( argc != 2 )
 	{
 		fprintf(stderr, "Usage: %s <area>\n", argv[0]);
@@ -216,12 +233,16 @@ int main(int argc, char* argv[])
 		strftime(buff, sizeof(buff), "%a %F", &ts[i]);
 		printf("%s\n", buff);
 		printf("--------------\n");
-		
 		result_sunrisesunset(&weather, &ts[i]);
 		result_rain(&weather, &ts[i]);
 		result_moon(&weather, &ts[i]);
+        if (0 == i)
+        {
+		    result_water(&weather, &ts[i]);
+        }
 		result_tide(&weather, &ts[i]);
 		result_swell(&weather, &ts[i]);
+
 		printf("\n");
 	}
 	
